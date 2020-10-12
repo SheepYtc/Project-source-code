@@ -1,0 +1,608 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style:none;
+    font-family: Helvetica,"PingFang SC","Microsoft Yahei",sans-serif;
+    /* box-sizing: border-box; */
+}
+body
+{
+   background: url(../img/888.png) no-repeat top center #ddedf4;
+   background-size: 100%;
+   font: 14px "Microsoft YaHei","SimSun","Arial Narrow";
+}
+ header nav
+ {
+     position: fixed;
+     width: 100%;
+     z-index: 100;
+     box-shadow: 0 0 18px rgba(0, 0, 0, .3);
+     background: rgba(0, 0, 0, .5);
+     height: 80px;
+     width: 100%;
+     animation: dh 0.5s ease-in-out forwards;
+ }
+ @keyframes dh
+ {
+       0%{
+           transform:translateY(-100px);
+       }
+       100%{
+           transform: translateY(0px);
+       }
+ }
+ nav img
+ {
+     width: 200px;
+     height: 85px;
+     position: absolute;
+ }
+  nav .logo
+ {
+     /* color: white; */
+     line-height: 80px;
+     font-size: 35px;
+     padding: 0 100px;
+     font-weight: bold;
+     position: relative;
+     display: inline;
+     text-transform: uppercase;
+ } 
+ 
+ @keyframes animate {
+     0% {
+         width: 0;
+     }
+ 
+     100% {
+         width: 50%;
+     }
+ }
+ nav ul
+ {
+     float: right;
+     margin-right:50px;
+    
+ }
+ nav ul li
+ {
+     line-height: 80px;
+     margin: 0 10px;
+     display: inline-block;
+   
+ } 
+ nav ul li a
+ {
+     color: white;
+     text-decoration: none;
+     font-size: 20px;
+    padding: 10px  17px;
+     border-radius: 3px;
+     font-weight: 600;
+     transition: .5s;
+     position: relative;
+     text-transform: uppercase;
+     
+ }
+ nav ul li a::before
+ {
+     content: "";
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 2px;
+     background: #3498db;
+     z-index: -1;
+     transform: scaleX(0);
+     transform-origin:right;
+     transition: transform .5s;
+ 
+ }
+ nav ul li a:hover::before 
+ {
+     transform: scaleX(1);
+     transform-origin: left ;
+     
+ }
+ nav ul li a::after
+ {
+     content: "";
+     position: absolute;
+     bottom: 0;
+     right:  0;
+     width: 100%;
+     height: 2px;
+     background: #3498db;
+     z-index: -1;
+     transform: scaleX(0);
+     transform-origin:left;
+     transition: transform .5s ;
+ 
+ }
+ nav ul li a:hover::after 
+ {
+     transform: scaleX(1);
+     transform-origin: right  ;
+     
+ }
+ nav ul li a:hover{
+     color:#3498db;
+ }
+ /* a.show 
+ {
+     background-color: red;
+     border-radius: 10px;
+     transition: all .5s;
+ } */
+ /* a:hover
+ {
+    background-color: red;
+     cursor: pointer;
+     border-radius: 10px;
+     
+ 
+ } */
+ #check
+ {
+     display: none;
+ }
+ label .checkbtn
+ {
+     font-size: 30px;
+     color: white;
+     float: right;
+     line-height: 80px;
+     margin-right: 50px;
+     cursor: pointer;
+     display: none;
+ }
+ @media (max-width:1100px)
+ {
+     nav .logo
+     {
+         font-size: 30px;
+         padding-left: 50px;
+     }
+     nav ul li a{
+         font-size: 16px;
+        
+     }
+     h1:before
+     {
+         top: -20px;
+         left: 50px;
+     }
+ }
+ @media (max-width:913px)
+ {
+     label .checkbtn
+     {
+         display: block;
+     }
+     nav .logo
+     {
+         font-size:25px;
+         
+     }
+     h1:before
+     {
+         top: -23px;
+         left: 50px;
+     }
+     nav ul
+     {
+         background: rgba(0, 0, 0, .8);
+         position: fixed;
+         width: 100%;
+         height:350px;
+         top: 80px;
+         left: -100%;
+         text-align: center;
+         transition: all .5s;
+         z-index: 100;
+         
+     }
+     nav ul li
+     {
+         line-height: 70px;
+         display: block;
+         width: 100%;
+         height:70px;
+        
+         
+     }
+     nav ul li a{
+         font-size: 20px;
+         font-weight: 600;
+        
+     }
+     a.show,a:hover
+     {
+        
+         transition: .5s;
+     }
+     #check:checked ~ ul{
+         left: 0;
+     }
+ }
+/* 关于北海 */
+.shang {
+    width: 100%;
+    height: 13050px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+}
+.gybh_main 
+{
+    margin: 0 auto;
+    width: 1500px;
+    height: 100%;
+    /* border: 1px solid red; */
+    margin-top: 300px;
+}
+.gybh_main h2
+{
+    width: 100%;
+    height: 100px;
+    /* border: 1px solid red; */
+    font-size: 72px;
+    text-align: center;
+    border-radius: 20px;
+    letter-spacing: 50px;
+    background: rgba(0, 0, 0, .1);
+    position: relative;
+}
+.gybh_main h2::before
+{
+    content: "探寻北海";
+    color:transparent;
+    position: absolute;
+    top: 0;
+    left: 505px;
+    background:linear-gradient( 90deg, #0652DD,#D980FA,#f1c40f);
+    background-clip: text;
+    -webkit-background-clip: text;
+    clip-path: ellipse( 50px 50px  0% 100%);
+    -webkit-clip-path: ellipse(50px 50px at 0% 100%); 
+    animation: Lighting 5s infinite;
+}
+@keyframes Lighting
+{
+    0%
+    {
+     clip-path: ellipse(50px 50px at 0% 50%);
+     -webkit-clip-path: ellipse(50px 50px at 0% 50%);
+    }
+    50%
+    {
+     clip-path: ellipse(50px 50pxt 0% 50%);
+     -webkit-clip-path: ellipse(50px 50px at 100% 50%);
+    }
+    100%
+    {
+     clip-path: ellipse(30px 30px at 0% 50%);
+     -webkit-clip-path: ellipse(50px 50px at 0% 50%);
+    }
+}
+.gybh_main .gybh_caidan
+{
+    top: 450px;
+    width: 200px;
+    height: 260px;
+    border-right: 2px solid #95a5a6;
+    margin-top: 30px;
+    text-align: center;
+    position: fixed;
+   margin-left: 30px;
+    
+}
+
+.gybh_main .gybh_caidan h3
+{
+    font-size: 30px;
+    letter-spacing: 10px;
+    position: relative;
+}
+.gybh_main .gybh_caidan h3::after
+{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 5px;
+    width: 5px;
+    height: 40px; 
+    background: #3498db;
+}
+/* .gybh_main .gybh_caidan ul
+{
+    width: 200px;
+    height: 200px;
+    border: 1px solid rgba(0, 0, 0, .5);
+    margin-top: 10px;
+} */
+.gybh_main .gybh_caidan li 
+{
+    margin-top: 10px;
+    width: 200;
+    line-height: 30px;
+    height: 30px;
+    /* border: 1px solid red; */
+    color: black;
+    font-size: 25px;
+    cursor: pointer;
+} 
+.gybh_main .gybh_caidan a{
+    margin-top: 10px;
+    width: 200;
+    line-height: 30px;
+    height: 30px;
+    /* border: 1px solid red; */
+    color: black;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.gybh_main .gybh_caidan li:hover a
+{
+    color: #3498db;
+    text-decoration: underline;
+}     
+.gybh_main .gybh_nr{
+    width: 1150px;
+    height: 2050px;
+    /* border-bottom: 1px solid rgba(0, 0, 0, .3); */
+    margin-left: 300px;
+    margin-top: 30px;
+}
+
+.gybh_nr span
+{
+    /* margin-top: 10px; */
+    font-size: 20px;
+    font-weight: 600;
+
+}
+.gybh_nr .hjzy
+{
+    margin-top: 30px;
+}
+.gybh_nr .dftc
+{
+    margin-top: 30px;
+}
+.gybh_nr .lyjd
+{
+    margin-top: 30px;
+}
+.gybh_nr img
+{
+    width: 311px;
+    height: 207px;
+   margin-left: 30%;
+}
+.gybh_nr h4{
+    font-size: 30px;
+   width: 100%;
+   height: 50px;
+   line-height: 50px;
+   border-bottom: 1px solid rgba(0, 0, 0, .5);
+   /* border: 1px solid red;
+   margin-top: 10px; */
+}
+.gybh_nr i
+{
+    color: #e67e22;
+    font-size: 25px;
+    margin-right: 8px;
+}
+.gybh_nr p
+{
+    font-size: 20px;
+    line-height:50px;
+    text-indent: 40px;
+}
+.gybh_nr .ms
+{
+    width: 300;
+    height: 400px;
+}
+#nav i
+{
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+/* 底部信息 */
+   footer
+ {
+     background:#2c3e50;
+     /* display: flex;
+     justify-content: center;
+     align-content: center; */
+     /* margin-top: 40px; */
+     padding-top:50px ;
+     padding-bottom: 24px;
+ }
+ footer .bottom
+ {
+     width: 100%;
+     display: flex;
+     margin-bottom: 30px;
+     justify-content: space-around;
+     flex-wrap: wrap;
+     
+     
+ }
+ .lnformation p,li
+ {
+     color: white;
+     font-size: 18px;
+     font-weight: 600;
+     margin-bottom: 15px;
+     font-family: monospace;
+     
+ }
+ .lnformation .logo
+ {
+     width: 250px;
+     position: absolute;
+    height: 130px;
+    margin-top: 150px;
+ }
+ .bottom  a
+ {
+     font-weight:300;
+     color: #bdc3c7;
+ }
+ .bottom  a:hover
+ {
+     background: none;
+     color: #3498db;
+     text-decoration: underline;
+ }
+ footer .record,.record1
+ {
+     
+     margin-top:50px;
+     text-align: center;
+     color: #bdc3c7;
+ }
+ footer .tub
+ {
+     width: 250px;
+     /*height: 50px; */
+     
+     position: fixed;
+     right:-205px;
+     top:600px;
+     z-index: 9999;
+ 
+     
+ }
+ footer .tub  i
+ {
+     
+     background:#000;
+     font-size: 40px;
+     border-radius: 5px;
+     cursor: pointer;
+     
+ 
+ }
+ 
+ footer .tub .kf
+ {
+     position: relative;
+     left: -55px;
+     color: #ecf0f1;
+     transition: all .5s;
+ }
+ footer .tub .kf span
+ {
+     font-size: 20px;
+     position: relative;
+     top: -8px;
+     margin:5px;
+ 
+ }
+ footer .tub .kf:hover
+ {
+     left: -145px;
+ }
+ footer .tub .dh a
+ {
+     position: relative;
+     left: 5px;
+     bottom: 2px;
+     color: #ecf0f1;
+     transition: all .5s;
+ }
+ footer .tub .dh span
+ {
+     font-size: 20px;
+     position: relative;
+     top: -5px;
+     margin:5px;
+ }
+ 
+ footer .tub .dh a:hover 
+ {
+     left: -210px;
+ }
+ footer .tub .qq a
+ {
+     position: relative;
+     left: -58px;
+     bottom:4px;
+     color: #ecf0f1;
+     transition: all .5s;
+     text-decoration: none;
+     
+ } 
+ footer .tub .qq span
+ {
+    font-size: 20px;
+    position: relative;
+    top: -8px;
+    margin:5px;
+ }
+ footer .tub .qq a:hover,
+ footer .tub  i:hover
+ {
+     left: -140px;
+     background: red;
+     
+ }
+ footer .tub .wx
+ {
+     position: relative;
+     left: -48px;
+     bottom:6px;
+     color: #ecf0f1;
+    
+ }
+ footer .tub .wx span
+ {
+     font-size: 20px;
+     position: relative;
+     top: -6px;
+     margin:5px;
+ }
+ footer .wx img
+ {
+     width: 160px;
+     height: 160px;   
+     position: absolute;
+     right:140px;
+     top:-10px;
+     z-index: 99;
+     border-radius: 10px;
+     visibility: hidden;
+     
+ }
+ footer .tub .wx:hover img
+ { 
+     visibility: visible; 
+    
+ }
+ /* footer .tub .top
+ {
+     position: relative;
+     color: #ecf0f1;
+     transition: all .5s;
+     font-size: 10px;
+ } */
+ footer .tub .top span
+{
+    font-size: 60px;
+    color: #3498db;
+    margin-right: 30px;
+}
+
+ /* .top{
+     display: none;
+ } */
+

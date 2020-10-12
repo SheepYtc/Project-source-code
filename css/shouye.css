@@ -1,0 +1,1628 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style:none;
+    font-family: Helvetica,"PingFang SC","Microsoft Yahei",sans-serif;
+    /* box-sizing: border-box; */
+}
+
+ header nav
+ {
+     position: fixed;
+     width: 100%;
+     z-index: 100;
+     box-shadow: 0 0 18px rgba(0, 0, 0, .3);
+     background: rgba(0, 0, 0, .5);
+     height: 80px;
+     width: 100%;
+     animation: dh 0.5s ease-in-out forwards;
+ }
+ @keyframes dh
+ {
+       0%{
+           transform:translateY(-100px);
+       }
+       100%{
+           transform: translateY(0px);
+       }
+ }
+ nav img
+ {
+     width: 200px;
+     height: 85px;
+     position: absolute;
+ }
+  nav .logo
+ {
+     /* color: white; */
+     line-height: 80px;
+     font-size: 35px;
+     padding: 0 100px;
+     font-weight: bold;
+     position: relative;
+     display: inline;
+     text-transform: uppercase;
+ } 
+ 
+ @keyframes animate {
+     0% {
+         width: 0;
+     }
+ 
+     100% {
+         width: 50%;
+     }
+ }
+ nav ul
+ {
+     float: right;
+     margin-right:50px;
+    
+ }
+ nav ul li
+ {
+     line-height: 80px;
+     margin: 0 10px;
+     display: inline-block;
+   
+ } 
+ nav ul li a
+ {
+     color: white;
+     text-decoration: none;
+     font-size: 20px;
+    padding: 10px  17px;
+     border-radius: 3px;
+     font-weight: 600;
+     transition: .5s;
+     position: relative;
+     text-transform: uppercase;
+     
+ }
+ nav ul li a::before
+ {
+     content: "";
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 2px;
+     background: #3498db;
+     z-index: -1;
+     transform: scaleX(0);
+     transform-origin:right;
+     transition: transform .5s;
+ 
+ }
+ nav ul li a:hover::before 
+ {
+     transform: scaleX(1);
+     transform-origin: left ;
+     
+ }
+ nav ul li a::after
+ {
+     content: "";
+     position: absolute;
+     bottom: 0;
+     right:  0;
+     width: 100%;
+     height: 2px;
+     background: #3498db;
+     z-index: -1;
+     transform: scaleX(0);
+     transform-origin:left;
+     transition: transform .5s ;
+ 
+ }
+ nav ul li a:hover::after 
+ {
+     transform: scaleX(1);
+     transform-origin: right  ;
+     
+ }
+ nav ul li a:hover{
+     color:#3498db;
+ }
+ /* a.show 
+ {
+     background-color: red;
+     border-radius: 10px;
+     transition: all .5s;
+ } */
+ /* a:hover
+ {
+    background-color: red;
+     cursor: pointer;
+     border-radius: 10px;
+     
+ 
+ } */
+ #check
+ {
+     display: none;
+ }
+ label .checkbtn
+ {
+     font-size: 30px;
+     color: white;
+     float: right;
+     line-height: 80px;
+     margin-right: 50px;
+     cursor: pointer;
+     display: none;
+ }
+ @media (max-width:1100px)
+ {
+     nav .logo
+     {
+         font-size: 30px;
+         padding-left: 50px;
+     }
+     nav ul li a{
+         font-size: 16px;
+        
+     }
+     h1:before
+     {
+         top: -20px;
+         left: 50px;
+     }
+ }
+ @media (max-width:913px)
+ {
+     label .checkbtn
+     {
+         display: block;
+     }
+     nav .logo
+     {
+         font-size:25px;
+         
+     }
+     h1:before
+     {
+         top: -23px;
+         left: 50px;
+     }
+     nav ul
+     {
+         background: rgba(0, 0, 0, .8);
+         position: fixed;
+         width: 100%;
+         height:350px;
+         top: 80px;
+         left: -100%;
+         text-align: center;
+         transition: all .5s;
+         z-index: 100;
+         
+     }
+     nav ul li
+     {
+         line-height: 70px;
+         display: block;
+         width: 100%;
+         height:70px;
+         
+     }
+     nav ul li a{
+         font-size: 20px;
+         font-weight: 600;
+        
+     }
+     a.show,a:hover
+     {
+        
+         transition: .5s;
+     }
+     #check:checked ~ ul{
+         left: 0;
+     }
+ }
+
+ /* 轮播图 */
+ .swiper-container
+ {
+     width: 100%;
+     height: 100%;
+     /* margin-bottom: 40px; */
+ }
+ .slide
+ {
+     cursor: pointer;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+ }
+ .slide video
+ {
+    object-fit: contain;
+    width: 100%;
+ }
+
+ .slide img
+ {
+     object-fit: contain;
+     width: 100%;
+
+ }
+ .introdution 
+ {
+     position: absolute;
+     width: 50%;
+     color:white;
+ }
+ .introdution h2{
+     font-size: 25px;
+     text-shadow: 0 0 10px #000;
+     text-align: center;
+ }
+ .introdution p
+ {
+     font-size: 20px;
+     text-shadow: 0 0 10px #000;
+     text-align: center;
+ }
+ @media (min-width: 500px) {
+     .introdution {
+       width: 70%;
+     }
+     .introdution h2 {
+       font-size: 20px;
+     }
+     .introdution p {
+       font-size: 16px;
+     }
+   }
+   @media (min-width: 760px) {
+     .introdution {
+       width: 60%;
+     }
+     .introdution h2 {
+       font-size: 40px;
+     }
+     .introdution p {
+       font-size: 20px;
+     }
+   }
+   /*中间部分*/
+   .center
+   {
+       width: 100%;
+       height: 100%;
+       /* height: 1000px; */
+       display: flex;
+       justify-content: center;
+       /* margin: 0 auto;  */
+       /* margin: 20px; */
+       /* margin: 0 auto; */
+       /* margin-top: 30px; */
+       /* border: 1px solid red; */
+       margin-top: 30px;
+   }
+    /*中间轮播图*/
+ .dowebok { 
+    /* border: 1px solid red; */
+    /* margin-left:0px; */
+    /* justify-content: center;
+    align-content: center; */
+    position: relative; 
+    left: 50px;
+    width: 820px; 
+    height: 347px;
+     /* margin: 0 auto;  */
+     padding-bottom: 50px; 
+     overflow: hidden; 
+     background-color: #121212;
+     flex-wrap:wrap;
+    }
+.slides img { width: 100%;
+     vertical-align: top;
+     width: 820px;
+     height: 350px;
+
+    }
+.slide-caption {
+     position: absolute;
+     left: 0; 
+     bottom: 0; 
+     font-size: 0;
+      background-color: #121212;
+    }
+.slide-caption li, .slide-caption a {
+     display: inline-block;
+      width: 164px;
+       height: 35px;
+    }
+.slide-caption a { 
+    font: 14px/50px "Microsoft Yahei"; 
+    width: 164px;
+    height: 65px;
+    color: #c8c8c8; text-align: center; 
+    text-decoration: none;
+}
+.slide-caption .flex-active a { 
+     color: #e9c06c;
+     background-color: #303030;
+     /* border-bottom: 2px solid blueviolet; */
+    }
+   /* .bottom
+   {
+       width: 100%;
+       /* height: 300px; */
+       /* background-color: #2980b9;
+       
+   }  */
+   /* 新闻公告 */
+   .center_xx
+   {
+       /* border: 1px solid red; */
+          margin-left:120px;
+       /* position: relative; */
+       /* float: r; */
+       /* right:70px; */
+       /* float: left; */
+   }
+   .gg{
+         /* border: 1px solid red; */
+       width: 500px;
+       height: 39px;
+       /* float: left; */
+   }
+  .center .news
+   {
+    /* float: left; */
+       /* background:rgb(94, 93, 92); */
+       /* padding-left: 300px; */
+       /* background: #03a9f4; */
+       border-bottom: 1px solid #ddd;
+       display: flex;
+       justify-content: center;
+       align-content: center;
+       position: relative;
+       /* margin-top: 35px; */
+       /* right:175px; */
+   }
+   .center .news ul
+   {
+    /* margin-bottom: 10px; */
+    width: 500px;
+    height: 50px;
+    
+
+   }
+   .center .news li:hover
+   {
+    color: #0da0b4;
+   }
+ .center .news li:hover::after
+   {
+       color: #0da0b4;
+       display: block; 
+    }
+   .center .news .show
+   {
+     color: #0da0b4;
+   }
+   .center .news li
+   {
+       color: black;
+      display: inline-block;
+      width: 45px;
+      margin-left:45px ;
+      line-height: 40px;
+      text-align: center;
+      font-size: 20px;
+      cursor: pointer;
+      position: relative;
+      transition: all .2s;
+   }
+   .center .news li::after{
+    content: '';
+    position: absolute;
+    background-image: url(https://ossweb-img.qq.com/images/lol/v3/tab-title-selected.png);
+    background-position: center center;
+    box-sizing: border-box;
+    display: none;
+    width: 100%;
+    height: 7px;
+    left: 0;
+    bottom: 0;
+    transition: width .2s,left .2s,margin-left .2s;
+
+   }
+   .center .news_1
+   {
+        /* background:rgb(94, 93, 92); */
+        /* padding-left: 300px; */
+        /* background: #03a9f4; */
+        /* border-bottom: 1px solid #ddd; */
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        position: relative;
+        /* margin-top: 35px; */
+        /* right:160px; */
+   }
+   .news_1  .bti:hover
+   {
+       color: #ffb142;
+   }
+   .news_1 li .bti 
+   {
+    
+    /* border: 1px solid red; */
+    margin-left: 20%;
+    letter-spacing: 30px;
+    width: 600px;
+    list-style: none;
+    /* background-position: 0 -458px; */
+    /* overflow: hidden; */
+    line-height: 30px;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 700;
+    box-sizing: border-box;
+    padding: 0 35px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #00d2d3;
+    /* background-image: url(//game.gtimg.cn/images/lol/v3/index-spr.png);
+    background-size: 638px 572px;
+    background-repeat: no-repeat; */
+    transition: all .2s;
+    
+       
+   }
+    .news_1 .xw,.sp
+    {
+        margin: 0 15px;
+        display: inline-block;
+        vertical-align: middle;
+        width: 40px;
+        height: 20px;
+        box-sizing: border-box;
+        font-size: 12px;
+        border: 1px #bb9a6c solid;
+        color: #bb9a6c;
+        line-height: 18px;
+        text-align: center;
+        transition: all .5s;
+    }
+    .news_1 .sp
+    {
+        margin: 0 15px;
+        display: inline-block;
+        vertical-align: middle;
+        width: 40px;
+        height: 20px;
+        box-sizing: border-box;
+        font-size: 12px;
+        border: 1px #ff6b6b solid;
+        color: #ff6b6b;
+        line-height: 18px;
+        text-align: center;
+        transition: all .5s;
+    }
+   .center .news_1 li
+   {
+    display: inline-block;
+    vertical-align: middle;
+    /* *zoom: 1;
+    *display: inline; */
+    width: 500px;
+    height: 30px;
+    overflow: hidden;
+    /* margin-left: 20px; */
+    color: #424242;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    transition: all .5s;
+    /* border-bottom: 1px solid  #ddd; */
+    
+   }
+
+   .center .news_1 .text_xw,.center .news_1 .text_sp
+   {
+       color: #222f3e;
+   }
+   .center .news_1 .text_sp:hover
+   {
+       color: #ff6b6b;
+   }
+   .center .news_1 .text_xw:hover
+   {
+       color:#bb9a6c;
+   }
+   .center .news_1 .time
+   {
+    display: inline-block;
+    vertical-align: middle;
+    width: 50px;
+    height: 20px;
+    overflow: hidden;
+    text-align: right;
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: #9d9d9d;
+    margin-left: 35px;
+   }
+    .news_1 .gd
+   {
+        display: inline-block;
+        width: 496px;
+        height: 40px;
+        background-color: #e3e2e2;
+        line-height: 40px;
+        text-align: center;
+        transition: left .5s;
+        border-radius: 5px;
+        position: relative;
+        top: -7px;
+    
+   }
+   .news_1 .gd:hover
+   {
+    animation: cute .5s ;
+   }
+   @keyframes cute {
+    0%,
+    100% {
+        transform: scale(1, 1);
+    }
+
+    25%,
+    75% {
+        transform:scale(1.1, .9);
+    }
+
+    50% {
+        transform: scale(.9, 1.1);
+    }
+}
+
+   .news_1 .gd .iconfont
+   {
+    background-position: -213px -126px;
+    width: 15px;
+    height: 9px;
+    color: #676767;
+    position: relative;
+    transition: left .5s;
+    animation: name1  .8s infinite;
+   }
+   @keyframes name1
+   {
+       0%{
+           left: 0;
+           }
+           100%{
+            left: 15px;
+           }
+   }
+   .news_1 .gd .c1
+   {
+        font-size: 14px;
+        color: #676767;
+
+    }
+    .news_1 .gd .c2
+    {
+        font-size: 14px;
+        color: #7ea1a6;
+    }
+    /* 风景美食 */
+    .fj
+    {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        position: relative;
+    }
+    .scenery{
+       
+        width: 820px;
+        height: 335px;
+        /* float: left; */
+        margin-top: 50px;
+    }
+    .scenery  .scn_cd
+    {
+        width: 100%;
+        height: 35px;
+        overflow: visible;
+        position: relative;
+       /* border: 1px solid red; */
+    }
+    .scenery  .scn_cd .fjms
+    {
+        position: absolute;
+        width: auto;
+        height: 28px;
+        top: 5px;
+        left: 5px;
+        box-sizing: border-box;
+        color: #0b0b0b;
+        font-size: 24px;
+        line-height: 28px;
+        font-weight: 400;
+    }
+    .scenery  .scn_cd .fjms::before
+    {
+        content: '';
+        display: inline-block;
+        vertical-align: middle;
+        width: 4px;
+        height: 28px;
+        background-color: #1da6ba;
+        margin-right: 10px;
+    }
+    .scenery .menu
+    {
+        width: 692px;
+        position: absolute;
+        height: 35px;
+        left: 128px;
+        box-sizing: border-box;
+        border-bottom: 1px #e0e2e2 solid;
+    }
+
+    .scenery .menu li
+    {
+        margin-right: 40px;
+        list-style: none;
+        position: relative;
+        cursor: pointer;
+        float: left;
+        width: auto;
+        min-width: 40px;
+        height: 37px;
+        overflow: visible;
+        color: #676767;
+        font-size: 16px;
+        letter-spacing: 1px;
+        line-height: 40px;
+        text-align: center;
+        /* border: 1px solid red; */
+        transition: all .2s;
+    }
+    .scenery .menu li:hover::after
+    {
+        display: block;
+    }
+    .scenery .menu li:hover
+    {
+        color: #0da0b4;
+    }
+    .scenery .menu li::after
+    {
+        content: '';
+        position: absolute;
+        background-image: url(https://ossweb-img.qq.com/images/lol/v3/tab-title-selected.png);
+        background-position: center center;
+        box-sizing: border-box;
+        display: none;
+        width: 100%;
+        height: 7px;
+        left: 0;
+        bottom: 0;
+    }
+    .scenery .scn_cd .menu_gd
+    {
+        position: absolute;
+        top: 0;
+        right: 15px;
+        display: block;
+        width: auto;
+        height: 35px;
+        font-size: 14px;
+        color: #7ea1a6;
+        line-height: 35px;
+        z-index: 1;
+    }
+    .scenery .scn_cd .menu_gd:hover 
+    {
+        color: #f1c40f;
+        font-weight: 700;
+        
+    }
+    .scn_cd .iconfont{
+
+        background-position: -213px -126px;
+        width: 15px;
+        height: 9px;
+        color: #676767;
+        position: relative;
+        transition: left .5s;
+        animation: name1  .8s infinite;
+       
+    }
+  
+   @keyframes name1
+   {
+       0%{
+           left: 0;
+           }
+           100%{
+            left: 15px;
+           }
+   }
+    /* 风景美食底下的图片 */
+    .scn_img
+    {
+        width: 820px;
+        height: 278px;
+        margin-top: 21px;
+    }
+    .scn_img .fj_img
+    {
+        width: 840px;
+        height: 278px;
+        position: relative;
+    }
+    .scn_img .fj_img .js_img
+    {
+        
+        float: left;
+        width: 193px;
+        height: 278px;
+        margin: 0 15px 20px 0;
+        overflow: hidden;
+        position: relative;
+        -webkit-transition: transform .2s;
+        transition: transform .2s;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        /* background:rgba(0, 0, 0, .5); */
+        background: #ecf0f1;
+        box-shadow: 0 0 18px rgba(0, 0, 0, 0.3);
+
+        text-align: center;
+        cursor: pointer;
+    }
+    .scn_img .fj_img .js_img:hover
+    {
+        -webkit-transform:translateY(-5%);
+        transform:translateY(-5%);
+    }
+    .scn_img .fj_img .js_img p
+    {
+        width: 100%;
+        overflow: hidden;
+        box-sizing: border-box;
+        padding: 6px 10px 4px 10px;
+        font-size: 14px;
+        color: #424242;
+        line-height: 18px;
+        text-align: center;      
+    }
+    .scn_img .fj_img .js_img:hover p
+    {
+        color: #0da0b4;
+    }
+    .scn_img .fj_img .js_img .js_img_text
+    {
+        /* position: absolute; */
+        position: relative;
+        font-size: 12px;
+        color: #1da6ba;
+        /* left: 10px;  */
+         bottom: -8px;
+        
+    }
+    .js_img .show_img
+    {
+         background: url(https://game.gtimg.cn/images/lol/v3/dark70-bg-repeat.png) repeat; 
+        /* background:rgba(0, 0, 0, .7); */
+        display: none;
+        width: 193px;
+        height: 207px;
+        line-height: 207px;
+        position: absolute;
+        top: -100%;
+        left: 0;
+        text-align: center;
+        transition: all .3s;
+        animation: chuxian .3s forwards;
+    }
+    .js_img:hover .show_img
+    {
+        display: block;
+       
+    }
+
+    @keyframes chuxian
+    {
+    
+        100%{
+            top: 0;
+        }
+    }
+    .js_img .show_img .hover_img
+    {
+        display: block;
+        position: absolute;
+        left: 50%;
+        margin-left: -94px;
+        top: 50%;
+        margin-top: -100px;
+        background-position: 0 0;
+        width: 188px;
+        height: 200px;
+    }
+   .show_img .show_text
+   {
+        display: inline-block;
+        vertical-align: middle;
+        position: relative;
+        line-height: 1.5;
+        padding: 0 10px;
+   }
+   .show_img .show_text .p1
+   {
+        font-size: 16px;
+        font-weight: 400;
+        color: #cdbe91;
+        margin-bottom: 2px;
+   }
+   .show_img .show_text .p2
+   {
+        font-size: 12px;
+        color: #9d9c9c;
+        max-height: 73px;
+        overflow: hidden;
+   }
+   /* 美食 */
+   .ms_right
+   {
+    
+    width: 520px;
+    height: 335px;
+    margin-top: 50px;
+    position: relative;
+    /* border: 1px solid red; */
+    left: 60px;
+   }
+   .ms_right .cx_right
+   {
+       margin: 0;
+       padding: 0;
+       position: relative;
+       cursor: pointer;
+       float: left;
+   }
+   .ms_right li img
+   {
+        width: 240px;
+        height: 150px;
+        /* float: left; */
+        margin: 10px;
+        border-radius: 10px;
+        position: relative;    
+   }
+   .ms_right .cx_right .search
+   {
+       position: absolute;
+        /* z-index: 999999; */
+        background: rgba(0, 0, 0, .5);
+        width: 240px;
+        height: 0;
+        margin: 10px;
+        border-radius: 10px;
+        /* background: url(//game.gtimg.cn/images/lol/v3/dark70-bg-repeat.png) repeat;  */
+        /* background:rgba(0, 0, 0, .7); */
+        display: none;
+        top: 0;
+        left: 0;
+        text-align: center;
+        transition: all .5s;
+        animation: mscx .5s forwards;
+   }
+    @keyframes mscx
+    {
+        100%
+        {
+            height: 150px;
+        }
+    }
+   .ms_right li:hover .search
+   {
+       display: block;
+       transition: all .5s;
+       
+   }
+   .ms_right .cx_right .search p
+   {
+       color: #c8d6e5;
+       font-size: 18px;
+       position: relative;
+       top: 70px;
+       right: 20px;
+       
+   }
+   .ms_right .cx_right .search i
+   {
+       font-size: 25px;
+       position: relative;
+       top: 45px;
+       right: -35px;
+
+       
+   }
+   .app_box{
+    width: 100%;
+    height: 100%;
+    /* height: 1000px; */
+    /* display: flex;
+    justify-content: center; */
+    /* border: 1px solid red; */
+   }
+    /*走进北海*/
+    .approach
+    {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        width: 100%;
+        /* border: 1px solid red; */
+        margin-top: 80px;
+
+        /* margin-left:210px; */
+    }
+    .approach .ditu
+    {
+        
+        width: 710px;
+        /* height: auto; */
+        height: 100%;
+        position: relative;
+        margin-left: 100px;
+        /* border: 1px solid red; */
+        position: relative;
+        /* left: 50px; */
+        
+       
+    }
+    /* .approach .ditu img
+    {
+        width: 620px;
+        transition: all .5s;
+        cursor: pointer;
+        background-position: center center;
+        position: absolute;
+        /* left: 15%; */
+        /* top: 0;
+        margin-left: 100px;
+    } */ 
+    .approach  .bhjs
+    {
+        /* border: 1px solid red; */
+        width: 600px;
+        height: 415px;
+        position: relative;
+        margin-left: 90px;
+        text-align: left;
+        /* margin-top: 30px;
+        margin-left: 80px; */
+        /* margin-left: 130px; */
+        /* border: 1px solid red;   */
+    }
+    .approach  .bhjs .zjbh
+    {
+        position: absolute;
+        width: auto;
+        height: 28px;
+        /* top: 2px; */
+        /* left: 5px; */
+        margin-left:10px;
+        margin-top: 20px;
+        box-sizing: border-box;
+        color: #0b0b0b;
+        font-size: 24px;
+        line-height: 28px;
+        font-weight: 400;
+        /* border: 1px solid red;  */
+       
+    }
+    .approach  .bhjs .zjbh::before
+    {
+        content: '';
+        display: inline-block;
+        vertical-align: middle;
+        width: 4px;
+        height: 28px;
+        background-color: #1da6ba;
+        margin-right: 10px;
+     
+    }
+    .bhjs .zjbh_cd
+    {
+        width: 420px;
+        position: absolute;
+        height: 35px;
+        left: 128px;
+        box-sizing: border-box;
+        border-bottom: 1px #e0e2e2 solid;
+        margin-top: 14px;
+        margin-left:10px;
+    }
+    .bhjs .zjbh_cd li 
+    {
+        margin-right: 40px;
+        list-style: none;
+        position: relative;
+        cursor: pointer;
+        float: left;
+        width: auto;
+        min-width: 40px;
+        height: 37px;
+        overflow: visible;
+        color: #676767;
+        font-size: 16px;
+        letter-spacing: 1px;
+        line-height: 40px;
+        text-align: center;
+        /* border: 1px solid red; */
+        transition: all .2s;
+    }
+    .bhjs .zjbh_cd li a
+    {
+        color: #676767;
+        font-weight: 700;
+    }
+    .bhjs .zjbh_cd li a:hover
+    {
+        color: #0da0b4;
+    }
+    .bhjs .zjbh_cd li::after{
+        content: '';
+        position: absolute;
+        background-image: url(https://ossweb-img.qq.com/images/lol/v3/tab-title-selected.png);
+        background-position: center center;
+        box-sizing: border-box;
+        display: none;
+        width: 100%;
+        height: 7px;
+        left: 0;
+        bottom: 0;
+        transition: width .2s,left .2s,margin-left .2s;
+    }
+    .bhjs .zjbh_cd li:hover::after
+    {
+        display: block;
+    }
+
+    .bhjs .zjbh_gd
+    {
+        position: absolute;
+        top: 0;
+        right:50px;
+        display: block;
+        width: auto;
+        height: 35px;
+        font-size: 14px;
+        color: #7ea1a6;
+        line-height: 35px;
+        /* z-index: 1; */
+        margin-top: 13px;
+    }
+    .bhjs .zjbh_gd:hover
+    {
+        color: #f1c40f;
+        font-weight: 700;
+    }
+    .bhjs .iconfont{
+
+        background-position: -213px -126px;
+        width: 15px;
+        height: 9px;
+        color: #676767;
+        position: relative;
+        transition: left .5s;
+        animation: name1  .8s infinite;
+    }
+  
+   @keyframes name1
+   {
+       0%{
+           left: 0;
+           }
+           100%{
+            left: 10px;
+           }
+   }
+   .bhjs .zjbh_js
+   {
+       position: absolute;
+       /* background: rgba(0, 0, 0, .1); */
+       height: 280px;
+       width: 550px;
+       text-indent: 45px;
+       font-size: 18px;
+       line-height: 45px;
+       margin: 0 auto;
+       margin-top: 80px;
+       margin-left: 30px;
+
+   }
+   /*关于我们*/
+   
+   .services-section {
+    /* background: #333; */
+    background-size: cover;
+    /* border: 1px solid red; */
+    margin-top: 10px;
+    margin-bottom: 100px;
+
+    
+}
+.inner-width {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0  auto; 
+    padding: 0 20px;
+    overflow: hidden;
+    /* border: 1px solid red; */
+    /* margin-left: 50px; */
+}
+.section-title {
+    text-align: center;
+    color: #333;
+    text-transform: uppercase;
+    font-size: 30px;
+    margin-top:80px;
+    font-weight: 900;
+    
+}
+.border {
+    width: 160px;
+    height: 2px;
+    background: #82ccdd;
+    margin: 20px auto;
+}
+.services-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* border: 1px solid red; */
+    
+}
+.service-box {
+    max-width: 300px;
+    padding: 15px;
+    text-align: center;
+    color: #333;
+    cursor: pointer;
+    /* border: 1px solid red; */
+    margin: 30px 50px;
+    box-shadow: 0 0 18px rgba(0, 0, 0, 0.09);
+    border-radius: 10px;
+    position: relative;
+    transition: all .5s;
+    
+}
+    .service-box .box_cx
+{
+    position: absolute;
+    
+    width: 0;
+    height: 220px;
+    border-radius: 10px;
+    /* width: 300px; */
+    padding: 15px;
+    text-align: center;
+    top: 0%;
+    display: none;
+    left: 0%;
+    right: 0;
+    bottom: 0;
+    color: #333;
+    cursor: pointer;
+    overflow: visible;
+    /* border: 1px solid red; */
+    background: rgba(0, 0, 0, .5);
+    transition: all .5s;
+    animation:  boxcx .5s forwards;
+    z-index: 1;
+}
+@keyframes boxcx
+{
+        0%{}   
+    100%{
+            width:300px;
+        }
+}
+.service-box .box_cx1
+{
+    position: absolute;
+    width: 0;
+    height: 200px;
+    border-radius: 10px;
+    /*width: 300px;
+    */padding: 15px;
+    text-align: center;
+    top: 0%;
+    display: none;
+    left: 0%;
+    right: 0;
+    bottom: 0;
+    color: #333;
+    cursor: pointer;
+    overflow: visible;
+    /*border: 1px solid red;
+    */background: rgba(0, 0, 0, .5);
+    transition: all .5s;
+    animation:  boxcx .5s forwards;
+    z-index: 1;
+    -webkit-animation:  boxcx .5s forwards;
+}
+@keyframes boxcx
+{
+        0%{}   
+    100%{
+            width:300px;
+        }
+}
+.service-box:hover  .box_cx{
+    display: block;
+}
+.service-box:hover  .box_cx1{
+    display: block;
+}
+.service-box .box_cx1 button
+{
+    width: 90px;
+    height: 30px;
+    position: relative;
+    top: 45%;
+    left: 0%;
+    border-radius: 5px;
+    border: none;
+    /* background: red; */
+    bottom: 0;
+    right: 0;
+    cursor: pointer;
+    border: 1px solid#3498db;
+    color: black;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-align: center;
+    z-index: 1;
+    overflow: hidden;
+   
+    
+}
+.service-box .box_cx1 button::before
+{
+        position: absolute;
+        content: "";
+        left: 0;
+        width: 100%;
+        height: 0%;
+        background-color:#3498db;
+        transition: .8s;
+        z-index: -1;
+        
+      
+}
+.service-box .box_cx1 .btn::before
+{
+        top:0;
+        border-radius: 0 0 50% 50% ;
+        
+}
+.service-box .box_cx1 .btn:hover::before
+{
+    height: 180%;
+   
+}
+.service-box .box_cx button
+{
+    width: 90px;
+    height: 30px;
+    position: relative;
+    top: 45%;
+    left: 0%;
+    border-radius: 5px;
+    border: none;
+    /* background: red; */
+    bottom: 0;
+    right: 0;
+    cursor: pointer;
+    border: 1px solid#3498db;
+    color: black;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-align: center;
+    z-index: 1;
+    overflow: hidden;
+   
+    
+}
+.service-box .box_cx button::before
+{
+        position: absolute;
+        content: "";
+        left: 0;
+        width: 100%;
+        height: 0%;
+        background-color:#3498db;
+        transition: .8s;
+        z-index: -1;
+        
+      
+}
+.service-box .box_cx .btn::before
+{
+        top:0;
+        border-radius: 0 0 50% 50% ;
+        
+}
+.service-box .box_cx .btn:hover::before
+{
+    height: 180%;
+   
+}
+.service-icon {
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    border: 3px solid #82ccdd;
+    color: #82ccdd;
+    margin-bottom: 30px;
+    margin-top: 16px;
+    transition: 0.3s linear;
+    border-radius: 10px;
+    /* transform:rotate(-45deg); */
+    /*transform:rotate(-45deg);
+    -webkit-transform:rotate(-45deg);
+    -moz-transform:rotate(-45deg);
+    -ms-transform:rotate(-45deg);
+    -o-transform:rotate(-45deg);
+    */
+    /* transform:rotate(45deg); */
+}
+  .service-icon i {
+    line-height: 70px;
+    font-size: 26px;
+    /*-webkit-transform:rotate(-45deg);
+    transform:rotate(-45deg);
+    */
+    /* transform:rotate(-45deg); */
+    /*transform:rotate(45deg);
+    -webkit-transform:rotate(-4deg);
+    -moz-transform:rotate(-4deg);
+    -ms-transform:rotate(-4deg);
+    -o-transform:rotate(-4deg);
+    */
+}
+
+.service-box:hover .service-icon {
+    background: #82ccdd;
+    color: #333;
+}
+.service-title {
+    font-size: 18px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+.service-desc {
+    font-size: 14px;
+}
+@media screen and (max-width: 960px) {
+    .service-box {
+        max-width: 45%;
+    }
+}
+@media screen and (max-width: 768px) {
+    .service-box {
+        max-width: 50%;
+    }
+}
+@media screen and (max-width: 480px) {
+    .service-box {
+        max-width: 100%;
+    }
+}
+
+     /* 底部信息 */
+   footer
+ {
+     background:#2c3e50;
+     /* display: flex;
+     justify-content: center;
+     align-content: center; */
+     /* margin-top: 40px; */
+     padding-top:50px ;
+     padding-bottom: 24px;
+ }
+ footer .bottom
+ {
+     width: 100%;
+     display: flex;
+     margin-bottom: 30px;
+     justify-content: space-around;
+     flex-wrap: wrap;
+     
+     
+ }
+ .lnformation p,li
+ {
+     color: white;
+     font-size: 18px;
+     font-weight: 600;
+     margin-bottom: 15px;
+     font-family: monospace;
+     
+ }
+ .lnformation .logo
+ {
+     width: 250px;
+     position: absolute;
+    height: 130px;
+    margin-top: 150px;
+ }
+ .bottom  a
+ {
+     font-weight:300;
+     color: #bdc3c7;
+ }
+ .bottom  a:hover
+ {
+     background: none;
+     color: #3498db;
+     text-decoration: underline;
+ }
+ footer .record,.record1
+ {
+     
+     margin-top:50px;
+     text-align: center;
+     color: #bdc3c7;
+ }
+ footer .tub
+ {
+     width: 250px;
+     /*height: 50px; */
+     
+     position: fixed;
+     right:-205px;
+     top:600px;
+     z-index: 9999;
+ 
+     
+ }
+ footer .tub  i
+ {
+     
+     background:#000;
+     font-size: 40px;
+     border-radius: 5px;
+     cursor: pointer;
+     
+ 
+ }
+ 
+ footer .tub .kf
+ {
+     position: relative;
+     left: -55px;
+     color: #ecf0f1;
+     transition: all .5s;
+ }
+ footer .tub .kf span
+ {
+     font-size: 20px;
+     position: relative;
+     top: -8px;
+     margin:5px;
+ 
+ }
+ footer .tub .kf:hover
+ {
+     left: -145px;
+ }
+ footer .tub .dh a
+ {
+     position: relative;
+     left: 5px;
+     bottom: 2px;
+     color: #ecf0f1;
+     transition: all .5s;
+ }
+ footer .tub .dh span
+ {
+     font-size: 20px;
+     position: relative;
+     top: -5px;
+     margin:5px;
+ }
+ 
+ footer .tub .dh a:hover 
+ {
+     left: -210px;
+ }
+ footer .tub .qq a
+ {
+     position: relative;
+     left: -58px;
+     bottom:4px;
+     color: #ecf0f1;
+     transition: all .5s;
+     text-decoration: none;
+     
+ } 
+ footer .tub .qq span
+ {
+    font-size: 20px;
+    position: relative;
+    top: -8px;
+    margin:5px;
+ }
+ footer .tub .qq a:hover,
+ footer .tub  i:hover
+ {
+     left: -140px;
+     background: red;
+     
+ }
+ footer .tub .wx
+ {
+     position: relative;
+     left: -48px;
+     bottom:6px;
+     color: #ecf0f1;
+    
+ }
+ footer .tub .wx span
+ {
+     font-size: 20px;
+     position: relative;
+     top: -6px;
+     margin:5px;
+ }
+ footer .wx img
+ {
+     width: 160px;
+     height: 160px;   
+     position: absolute;
+     right:140px;
+     top:-10px;
+     z-index: 99;
+     border-radius: 10px;
+     visibility: hidden;
+     
+ }
+ footer .tub .wx:hover img
+ { 
+     visibility: visible; 
+    
+ }
+ /* footer .tub .top
+ {
+     position: relative;
+     color: #ecf0f1;
+     transition: all .5s;
+     font-size: 10px;
+ } */
+ /* footer .tub .top span
+ {
+     font-size: 20px;
+     margin:5px;
+     position: relative;
+     top: -5px;
+ } */
+ footer .tub .top span
+{
+    font-size: 60px;
+    color: #3498db;
+    margin-right: 30px;
+}
+ /* .top{
+     display: none;
+ } */
+
